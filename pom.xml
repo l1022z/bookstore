@@ -26,6 +26,132 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.aopalliance/com.springsource.org.aopalliance -->
+    <dependency>
+      <groupId>org.aopalliance</groupId>
+      <artifactId>com.springsource.org.aopalliance</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.aspectj/com.springsource.org.aspectj.weaver -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>com.springsource.org.aspectj.weaver</artifactId>
+      <version>1.6.4.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jcl -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jcl</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.2.2.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.19</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.1.21</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/taglibs/standard -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-servlet-api</artifactId>
+      <version>9.0.16</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.4</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -63,5 +189,22 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>
