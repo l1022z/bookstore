@@ -7,15 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be44cab0-cb4f-4ff2-8986-1a467796f61f" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-ds.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-tx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookstore/client/user/handler/UserHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bookstore/commons/beans/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/client/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/client/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,13 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,6 +57,9 @@
     <option name="vmOptions" value="-Dfile.encoding=GBK" />
   </component>
   <component name="ProjectId" id="1aReOOnDGe9gYTcfjxUCeOjxnxo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,6 +85,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\桌面\test\bookstore\src\main\java\com\bookstore\utils" />
       <recent name="H:\桌面\test\bookstore\src\main\resources" />
       <recent name="H:\桌面\bookstore\src\main\webapp" />
     </key>
@@ -195,7 +201,7 @@
       <workItem from="1586702802151" duration="183000" />
       <workItem from="1586763047459" duration="586000" />
       <workItem from="1586763644888" duration="1837000" />
-      <workItem from="1586831207733" duration="1765000" />
+      <workItem from="1586831207733" duration="4273000" />
     </task>
     <task id="LOCAL-00001" summary="第二次">
       <created>1586763725797</created>
@@ -218,29 +224,52 @@
       <option name="project" value="LOCAL" />
       <updated>1586764218631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="第三次">
+      <created>1586833232800</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586833232800</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第二次" />
-    <option name="LAST_COMMIT_MESSAGE" value="第二次" />
+    <MESSAGE value="第三次" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三次" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586831407320">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586831407320" />
+    <state x="721" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1586834003288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="721" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586834003288" />
     <state x="452" y="96" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1586831374306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="452" y="96" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1586831374306" />
-    <state x="482" y="45" key="CommitChangelistDialog2" timestamp="1586833193020">
+    <state x="482" y="45" key="CommitChangelistDialog2" timestamp="1586833228919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="482" y="45" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586833193020" />
+    <state x="482" y="45" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586833228919" />
     <state width="1459" height="266" key="GridCell.Tab.0.bottom" timestamp="1586833112291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,14 +318,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1459" height="266" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586833112292" />
+    <state x="0" y="96" key="Maven.ArtifactSearchDialog" timestamp="1586834269787">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="96" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586834269787" />
     <state x="337" y="0" key="SettingsEditor" timestamp="1586763847782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="337" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586763847782" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1586764234788">
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1586833311740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586764234788" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586833311740" />
     <state x="235" y="244" key="run.anything.popup" timestamp="1586832249971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

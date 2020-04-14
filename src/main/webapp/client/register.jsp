@@ -25,7 +25,7 @@
 <!-- 网上书城菜单列表  end -->
 <!-- 3.网上书城用户注册  start -->
 	<div id="divcontent">
-		<form action="${pageContext.request.contextPath}/register" method="post" onsubmit="return checkForm();">
+		<form action="${pageContext.request.contextPath}/client/user/register" method="post" onsubmit="return checkForm();">
 			<table width="850px" border="0" cellspacing="0">
 				<tr>
 					<td style="padding: 30px"><h1>新会员注册</h1>
@@ -87,7 +87,7 @@
 							<tr>
 								<td style="text-align: right; width: 20%">输入校验码：</td>
 								<td style="width: 50%">
-								<input type="text" class="textinput" />
+								<input type="text" class="textinput" name="checkCode"/>
 								</td>
 								<td>&nbsp;</td>
 							</tr>
