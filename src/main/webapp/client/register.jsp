@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -28,7 +29,13 @@
 		<form action="${pageContext.request.contextPath}/client/user/register" method="post" onsubmit="return checkForm();">
 			<table width="850px" border="0" cellspacing="0">
 				<tr>
-					<td style="padding: 30px"><h1>新会员注册</h1>
+					<td style="padding: 30px">
+						<c:if test="${fail == null}">
+							<h1>新会员注册</h1>
+						</c:if>
+						<c:if test="${fail != null}">
+							<h1>${fail}</h1>
+						</c:if>
 						<table width="70%" border="0" cellspacing="2" class="upline">
 							<tr>
 								<td style="text-align: right; width: 20%">会员邮箱：</td>
@@ -87,9 +94,9 @@
 							<tr>
 								<td style="text-align: right; width: 20%">输入校验码：</td>
 								<td style="width: 50%">
-								<input type="text" class="textinput" name="checkCode"/>
+								<input type="text" class="textinput" name="checkCode" />
 								</td>
-								<td>&nbsp;</td>
+								<td>${requestScope.check_error}</td>
 							</tr>
 							<tr>
 								<td style="text-align: right; width: 20%;">&nbsp;</td>
@@ -104,7 +111,7 @@
 						<table width="70%" border="0" cellspacing="0">
 							<tr>
 								<td style="padding-top: 20px; text-align: center">
-									<input type="image" src="images/signup.gif" name="submit" border="0"/>
+									<input type="image" src="${pageContext.request.contextPath}/client/images/signup.gif" name="submit" border="0"/>
 								</td>
 							</tr>
 						</table>

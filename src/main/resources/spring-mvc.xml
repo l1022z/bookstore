@@ -19,8 +19,8 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
 
 <!--    异常解析器-->
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="defaultErrorView" value="/jsp/error.jsp"/>
-        <property name="exceptionAttribute" value="ex"/>
-    </bean>
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="defaultErrorView" value="/jsp/error.jsp"/>-->
+<!--        <property name="exceptionAttribute" value="ex"/>-->
+<!--    </bean>-->
 </beans>
