@@ -8,8 +8,34 @@
 <%--导入css和js --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/client/css/main.css" type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
-<script type="text/javascript">
-	function changeImage() {
+<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript">
+		function findUsername() {
+			$.post("${pageContext.request.contextPath}/client/user/findUsername?username="+$("#username").val(),
+					function (data) {
+						if (data == "EXIST"){
+							alert("用户名已被占用，请使用其他用户名注册！");
+							//当输入的用户名被占用，输入信息清空
+							$("#username").val("");
+						}
+
+					});
+	}
+
+	function findEmail() {
+		$.post("${pageContext.request.contextPath}/client/user/findEmail?email="+$("#email").val(),
+				function (data) {
+					if (data == "EXIST"){
+						alert("邮箱已被占用，请使用其他邮箱注册！");
+						//当输入的邮箱被占用，输入信息清空
+						$("#email").val("");
+					}
+
+				});
+}
+
+function changeImage() {
 		// 改变验证码图片中的文字
 		document.getElementById("img").src = "${pageContext.request.contextPath}/imageCode?time="
 				+ new Date().getTime();
@@ -40,13 +66,13 @@
 							<tr>
 								<td style="text-align: right; width: 20%">会员邮箱：</td>
 								<td style="width: 40%">
-								<input type="text" class="textinput"  id="email" name="email" onkeyup="checkEmail();"/>
+								<input type="text" class="textinput"  id="email" name="email" onkeyup="checkEmail();" onblur="findEmail()"/>
 								</td>
 								<td colspan="2"><span id="emailMsg"></span><font color="#999999">请输入有效的邮箱地址</font></td>
 							</tr>
 							<tr>
 								<td style="text-align: right">会员名：</td>
-								<td><input type="text" class="textinput"  id="username" name="username" onkeyup="checkUsername();"/>
+								<td><input type="text" class="textinput"  id="username" name="username" onkeyup="checkUsername();" onblur="findUsername()"/>
 								</td>
 								<td colspan="2"><span id="usernameMsg"></span><font color="#999999">字母数字下划线1到10位, 不能是数字开头</font></td>
 							</tr>

@@ -12,7 +12,7 @@
 	<jsp:include page="menu_search.jsp" />
 
 	<div id="divcontent">
-		<form action="${pageContext.request.contextPath}/login" method="post">
+		<form action="${pageContext.request.contextPath}/client/user/login" method="post">
 			<table width="900px" border="0" cellspacing="0">
 				<tr>
 					<td style="padding:30px"><div style="height:470px">
@@ -38,23 +38,26 @@
 															<table width="80%" border="0" cellspacing="0"
 																style="margin-top:15px ;margin-left:auto; margin-right:auto">
 																<tr>
+																	<td colspan="2"><font color="red">${login_error}</font></td>
+																</tr>
+																<tr>
 																	<td
 																		style="text-align:right; padding-top:5px; width:25%">用户名：</td>
 																	<td style="text-align:left"><input name="username"
-																		type="text" class="textinput" />
+																		type="text" class="textinput" value="${cookie.bookstore_username.value}"/>
 																	</td>
 																</tr>
 																<tr>
 																	<td style="text-align:right; padding-top:5px">密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
 																	<td style="text-align:left"><input name="password"
-																		type="password" class="textinput" />
+																		type="password" class="textinput" value="${cookie.bookstore_password.value}"/>
 																	</td>
 																</tr>
 																<tr>
 																	<td colspan="2" style="text-align:center"><input
-																		type="checkbox" name="checkbox" value="checkbox" />
+																		type="checkbox" name="remember" value="1" />
 																		记住用户名&nbsp;&nbsp; <input type="checkbox"
-																		name="checkbox" value="checkbox" /> 自动登录</td>
+																		name="autologin" value="1" /> 自动登录</td>
 																</tr>
 																<tr>
 																	<td colspan="2"

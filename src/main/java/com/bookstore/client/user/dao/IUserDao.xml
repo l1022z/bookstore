@@ -8,4 +8,20 @@
         insert into user (username,password,gender,email,telephone,introduce,activeCode)
         value (#{username},#{password},#{gender},#{email},#{telephone},#{introduce},#{activeCode})
     </insert>
+
+    <update id="activeUser">
+        update user set state = 1 where activeCode = #{activeCode}
+    </update>
+    
+    <select id="selectEmail" resultType="User">
+        select * from user where email = #{email}
+    </select>
+
+    <select id="selectUsername" resultType="User">
+        select * from user where username = #{username}
+    </select>
+    
+    <select id="selectUserByLogin" resultType="User">
+        select * from user where username = #{username} and password = #{password}
+    </select>
 </mapper>
