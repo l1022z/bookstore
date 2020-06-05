@@ -30,7 +30,7 @@
 </script>
 <body onload="setProductCategory('${p.category}')">
 	<form id="userAction_save_do" name="Form1"
-		action="${pageContext.request.contextPath}/editProduct" method="post"
+		action="${pageContext.request.contextPath}/admin/products/editProduct" method="post"
 		enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${p.id}" /> &nbsp;
 		<table cellSpacing="1" cellPadding="5" width="100%" align="center"

@@ -8,31 +8,29 @@
 <%--导入css和js --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/client/css/main.css" type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/jquery-3.3.1.min.js"></script>
 
-	<script type="text/javascript">
-		function findUsername() {
-			$.post("${pageContext.request.contextPath}/client/user/findUsername?username="+$("#username").val(),
-					function (data) {
-						if (data == "EXIST"){
-							alert("用户名已被占用，请使用其他用户名注册！");
-							//当输入的用户名被占用，输入信息清空
-							$("#username").val("");
-						}
-
-					});
-	}
-
-	function findEmail() {
-		$.post("${pageContext.request.contextPath}/client/user/findEmail?email="+$("#email").val(),
+<script type="text/javascript">
+	function findUsername() {
+		$.post("${pageContext.request.contextPath}/client/user/findUsername?username="+$("#username").val(),
 				function (data) {
-					if (data == "EXIST"){
-						alert("邮箱已被占用，请使用其他邮箱注册！");
-						//当输入的邮箱被占用，输入信息清空
-						$("#email").val("");
+					if (data == "EXIST") {
+						alert("会员名已被占用，请使用其他名称注册！");
+						//当输入的会员名被占用，输入信息清空
+						$("#username").val("");
 					}
-
 				});
+}
+
+function findEmail() {
+    	$.post("${pageContext.request.contextPath}/client/user/findEmail?email="+$("#email").val(),
+		function (data) {
+    		if (data == "EXIST") {
+    			alert("邮箱已被占用，请使用其他邮箱注册！");
+    			//当输入的邮箱被占用，输入信息清空
+    			$("#email").val("");
+			}
+		});
 }
 
 function changeImage() {
@@ -55,6 +53,7 @@ function changeImage() {
 		<form action="${pageContext.request.contextPath}/client/user/register" method="post" onsubmit="return checkForm();">
 			<table width="850px" border="0" cellspacing="0">
 				<tr>
+
 					<td style="padding: 30px">
 						<c:if test="${fail == null}">
 							<h1>新会员注册</h1>
@@ -120,7 +119,7 @@ function changeImage() {
 							<tr>
 								<td style="text-align: right; width: 20%">输入校验码：</td>
 								<td style="width: 50%">
-								<input type="text" class="textinput" name="checkCode" />
+								<input type="text" class="textinput" name="checkCode"/>
 								</td>
 								<td>${requestScope.check_error}</td>
 							</tr>

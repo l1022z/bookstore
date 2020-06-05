@@ -4,6 +4,16 @@
 <head>
 	<title>电子书城</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/client/css/main.css" type="text/css" />
+	<script>
+		function checkpnum(id,pnum) {
+			pnum = parseInt(pnum);
+			if (pnum <= 0) {
+				alert("商品库存不足！");
+			} else {
+				location.href = "${pageContext.request.contextPath}/client/cart/addCart?id="+id;
+			}
+		}
+	</script>
 </head>
 
 <body class="main">
@@ -29,7 +39,7 @@
 												</p>
 											</div>
 											<div style="text-align:center; margin-top:25px">
-												<a href="${pageContext.request.contextPath}/addCart?id=${p.id}">
+												<a href="#" onclick="checkpnum('${p.id}','${p.pnum}');">
 													<img src="${pageContext.request.contextPath }/client/images/buybutton.gif" border="0" /> 
 												</a>
 											</div>

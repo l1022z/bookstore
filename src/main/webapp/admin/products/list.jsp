@@ -15,7 +15,7 @@
 <body>
 	<br>
 	<form id="Form1" name="Form1"
-		action="${pageContext.request.contextPath}/findProductByManyCondition"
+		action="${pageContext.request.contextPath}/admin/products/findProductByManyCondition"
 		method="post">
 		<table cellSpacing="1" cellPadding="0" width="100%" align="center"
 			bgColor="#f5fafe" border="0">
@@ -32,27 +32,27 @@
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									商品编号</td>
 								<td class="ta_01" bgColor="#ffffff"><input type="text"
-									name="id" size="15" value="" id="Form1_userName" class="bg" />
+									name="id" size="15" value="${product.id}" id="Form1_userName" class="bg" />
 								</td>
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									类别：</td>
 								<td class="ta_01" bgColor="#ffffff"><select name="category"
 									id="category">
 										<option value="" selected="selected">--选择商品类别--</option>
-										<option value="文学">文学</option>
-										<option value="生活">生活</option>
-										<option value="计算机">计算机</option>
-										<option value="外语">外语</option>
-										<option value="经营">经营</option>
-										<option value="励志">励志</option>
-										<option value="社科">社科</option>
-										<option value="学术">学术</option>
-										<option value="少儿">少儿</option>
-										<option value="艺术">艺术</option>
-										<option value="原版">原版</option>
-										<option value="科技">科技</option>
-										<option value="考试">考试</option>
-										<option value="生活百科">生活百科</option>
+									<option value="文学" <c:if test="${product.category == '文学'}">selected</c:if>>文学</option>
+										<option value="生活" <c:if test="${product.category == '生活'}">selected</c:if>>生活</option>
+										<option value="计算机" <c:if test="${product.category == '计算机'}">selected</c:if>>计算机</option>
+										<option value="外语" <c:if test="${product.category == '外语'}">selected</c:if>>外语</option>
+										<option value="经营" <c:if test="${product.category == '经营'}">selected</c:if>>经营</option>
+										<option value="励志" <c:if test="${product.category == '励志'}">selected</c:if>>励志</option>
+										<option value="社科" <c:if test="${product.category == '社科'}">selected</c:if>>社科</option>
+										<option value="学术" <c:if test="${product.category == '学术'}">selected</c:if>>学术</option>
+										<option value="少儿" <c:if test="${product.category == '少儿'}">selected</c:if>>少儿</option>
+										<option value="艺术" <c:if test="${product.category == '艺术'}">selected</c:if>>艺术</option>
+										<option value="原版" <c:if test="${product.category == '原版'}">selected</c:if>>原版</option>
+										<option value="科技" <c:if test="${product.category == '科技'}">selected</c:if>>科技</option>
+										<option value="考试" <c:if test="${product.category == '考试'}">selected</c:if>>考试</option>
+										<option value="生活百科" <c:if test="${product.category == '生活百科'}">selected</c:if>>生活百科</option>
 								</select></td>
 							</tr>
 
@@ -60,13 +60,13 @@
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									商品名称：</td>
 								<td class="ta_01" bgColor="#ffffff"><input type="text"
-									name="name" size="15" value="" id="Form1_userName" class="bg" />
+									name="name" size="15" value="${product.name}" id="Form1_userName" class="bg" />
 								</td>
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									价格区间(元)：</td>
 								<td class="ta_01" bgColor="#ffffff"><input type="text"
-									name="minprice" size="10" value="" />- <input type="text"
-									name="maxprice" size="10" value="" /></td>
+									name="minprice" size="10" value="${minprice}" />- <input type="text"
+									name="maxprice" size="10" value="${maxprice}" /></td>
 							</tr>
 
 							<tr>
@@ -115,7 +115,7 @@
 								<td width="8%" align="center">删除</td>
 							</tr>
 
-							<c:forEach items="${ps}" var="p">
+							<c:forEach items="${products}" var="p">
 								<tr onmouseover="this.style.backgroundColor = 'white'"
 									onmouseout="this.style.backgroundColor = '#F5FAFE';">
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
@@ -129,14 +129,14 @@
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center">
 										${p.category}</td>
 									<td align="center" style="HEIGHT: 22px" width="7%"><a
-										href="${pageContext.request.contextPath}/findProductById?id=${p.id}&type=admin">
+										href="${pageContext.request.contextPath}/admin/products/findProductById?id=${p.id}">
 											<img
 											src="${pageContext.request.contextPath}/admin/images/i_edit.gif"
 											border="0" style="CURSOR: hand"> </a>
 									</td>
 
 									<td align="center" style="HEIGHT: 22px" width="7%"><a
-										href="${pageContext.request.contextPath}/deleteProduct?id=${p.id}">
+										href="${pageContext.request.contextPath}/admin/products/removeProduct?id=${p.id}">
 											<img
 											src="${pageContext.request.contextPath}/admin/images/i_del.gif"
 											width="16" height="16" border="0" style="CURSOR: hand">

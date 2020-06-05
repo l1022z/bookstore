@@ -10,9 +10,11 @@
 <body>
 	<!-- <p:user /> -->
 	<!-- 确认支付form -->
-	<form action="https://www.yeepay.com/app-merchant-proxy/node" method="post">
-		<h3>订单号：${p2_Order},付款金额 ：${p3_Amt }</h3>
-		<input type="hidden" name="pd_FrpId" value="${pd_FrpId }" /> <input
+	<form action="${pageContext.request.contextPath}/client/order/pay" method="post">
+		<h3>订单号：${order.id},付款金额 ：${order.money }</h3>
+		<input type="hidden" name="id" value="${order.id}">
+		<input type="hidden" name="money" value="${order.money}">
+		<%--<input type="hidden" name="pd_FrpId" value="${pd_FrpId }" /> <input
 			type="hidden" name="p0_Cmd" value="${p0_Cmd }" /> <input
 			type="hidden" name="p1_MerId" value="${p1_MerId }" /> <input
 			type="hidden" name="p2_Order" value="${p2_Order }" /> <input
@@ -25,7 +27,7 @@
 			<input type="hidden" name="p9_SAF" value="${p9_SAF }" /> 
 			<input type="hidden" name="pa_MP" value="${pa_MP }" /> 
 			<input type="hidden" name="pr_NeedResponse" value="${pr_NeedResponse }" /> 
-			<input type="hidden" name="hmac" value="${hmac }" /> 
+			<input type="hidden" name="hmac" value="${hmac }" /> --%>
 			<input type="submit" value="确认支付" />
 	</form>
 </body>

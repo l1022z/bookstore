@@ -1,12 +1,11 @@
 package com.bookstore.client.user.dao;
 
+import com.bookstore.commons.beans.Order;
+import com.bookstore.commons.beans.OrderItem;
 import com.bookstore.commons.beans.User;
 
-/**
- * company: www.abc.com
- * Author: Administrator
- * Create Data: 2020/4/15
- */
+import java.util.List;
+
 public interface IUserDao {
     int insertUser(User user);
 
@@ -17,4 +16,16 @@ public interface IUserDao {
     User selectUsername(String username);
 
     User selectUserByLogin(User user);
+
+    int updateUser(User user);
+
+    List<Order> selectOrderByUser(Integer id);
+
+    List<OrderItem> selectOrderItemById(String id);
+
+    void deleteOrderById(String id);
+
+    void deleteOrderItemById(String id);
+
+    void updateProductnum(OrderItem item);
 }

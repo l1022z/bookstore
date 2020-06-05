@@ -30,13 +30,13 @@
 						<tr>
 							<td class="listtd">
 								<img src="${pageContext.request.contextPath }/client/images/miniicon.gif" width="9" height="6" />&nbsp;&nbsp;&nbsp;&nbsp; 
-								<a href="${pageContext.request.contextPath}/findOrderByUser">订单查询</a>
+								<a href="${pageContext.request.contextPath}/client/user/findOrderByUser">订单查询</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="listtd">
 								<img src="${pageContext.request.contextPath }/client/images/miniicon.gif" width="9" height="6" />&nbsp;&nbsp;&nbsp;&nbsp; 
-								<a href="${pageContext.request.contextPath}/logout">用戶退出</a>
+								<a href="${pageContext.request.contextPath}/client/user/logout">用户退出</a>
 							</td>
 						</tr>
 					</table>
@@ -68,12 +68,12 @@
 											<td class="tableopentd02">${order.ordertime}</td>
 											<td class="tableopentd02">${order.paystate==0?"未支付":"已支付"}</td>
 											<td class="tableopentd03">
-												<a href="${pageContext.request.contextPath}/findOrderById?id=${order.id}">查看</a>&nbsp;&nbsp;
+												<a href="${pageContext.request.contextPath}/client/user/findOrderById?id=${order.id}">查看</a>&nbsp;&nbsp;
 												<c:if test="${order.paystate==0 }">
-													<a href="${pageContext.request.contextPath}/delOrderById?id=${order.id}">刪除</a>
+													<a href="${pageContext.request.contextPath}/client/user/removeOrderById?id=${order.id}">刪除</a>
 												</c:if> 
 												<c:if test="${order.paystate!=0 }">
-													<a href="${pageContext.request.contextPath}/delOrderById?id=${order.id}&type=client">刪除</a>
+													<a href="${pageContext.request.contextPath}/client/user/removeOrderById?id=${order.id}&flag=1">刪除</a>
 												</c:if>
 											</td>
 										</tr>

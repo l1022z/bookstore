@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="yyf" uri="http://yyf.pager-tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -17,14 +18,14 @@
 			<tr>
 				<td><div style="text-align:right; margin:5px 10px 5px 0px">
 						<a href="${pageContext.request.contextPath }/index.jsp">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;
-						${bean.category}&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;图书列表
+						${category}&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;图书列表
 					</div>
 					<table cellspacing="0" class="listcontent">
 						<tr>
 							<td>
 								<h1>商品目录</h1>
 								<hr />
-								<h1>${bean.category}</h1>&nbsp;&nbsp;&nbsp;&nbsp;共${bean.totalCount}种商品
+								<h1>${category}</h1>&nbsp;&nbsp;&nbsp;&nbsp;共${pageModel.rocordCount}种商品
 								<hr />
 								<div style="margin-top:20px; margin-bottom:5px">
 									<img src="${pageContext.request.contextPath }/client/images/productlist.gif" width="100%" height="38" />
@@ -32,7 +33,7 @@
 
 								<table cellspacing="0" class="booklist">
 									<tr>
-											<td>
+											<%--<td>
 												<div class="divbookpic">
 													<p>
 														<a href="#">
@@ -43,18 +44,18 @@
 												<div class="divlisttitle">
 													<a href="${pageContext.request.contextPath}/findProductById?id=${p.id}">书名：时空穿行 <br />售价：￥38.8 </a>
 												</div>
-											</td>
-										<c:forEach items="${bean.ps}" var="p" varStatus="vs">
+											</td>--%>
+										<c:forEach items="${products}" var="p" varStatus="vs">
 											<td>
 												<div class="divbookpic">
 													<p>
-														<a href="${pageContext.request.contextPath}/findProductById?id=${p.id}">
+														<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}">
 															<img src="${pageContext.request.contextPath}${p.imgurl}" width="115" height="129" border="0" /> 
 														</a>
 													</p>
 												</div>
 												<div class="divlisttitle">
-													<a href="${pageContext.request.contextPath}/findProductById?id=${p.id}">书名： ${p.name}<br />售价：￥${p.price} </a>
+													<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}">书名： ${p.name}<br />售价：￥${p.price} </a>
 												</div>
 											</td>
 
@@ -69,7 +70,11 @@
 								</table> -->
 
 								<div class="pagination">
-									<ul>
+									<yyf:pager pageIndex="${pageModel.pageIndex}"
+											   pageSize="${pageModel.pageSize}"
+											   recordCount="${pageModel.rocordCount}"
+											   submitUrl="${pageContext.request.contextPath}/client/product/findProductByCategory?pageIndex={0}&category=${category}"/>
+									<%--<ul>
 										<c:if test="${bean.currentPage!=1}">
 											<li class="nextPage">
 												<a href="${pageContext.request.contextPath}/showProductByPage?currentPage=${bean.currentPage-1}&category=${bean.category}">&lt;&lt;上一页</a>
@@ -97,7 +102,7 @@
 													&gt;&gt;</a>
 											</li>
 										</c:if>
-									</ul>
+									</ul>--%>
 								</div>
 							</td>
 						</tr>

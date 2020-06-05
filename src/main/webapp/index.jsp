@@ -7,6 +7,6 @@
 </head>
 
 <body>
-	<jsp:forward page="/client/index.jsp"></jsp:forward>
+	<jsp:forward page="/client/product/showIndex"></jsp:forward>
 </body>
 </html>

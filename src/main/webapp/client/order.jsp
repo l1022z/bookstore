@@ -32,7 +32,7 @@
 							href="${pageContext.request.contextPath}/client/cart.jsp">&nbsp;购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;订单
 					</div>
 
-					<form id="orderForm" action="${pageContext.request.contextPath}/createOrder" method="post">
+					<form id="orderForm" action="${pageContext.request.contextPath}/client/order/createOrder" method="post">
 						<table cellspacing="0" class="infocontent">
 							<tr>
 								<td><table width="100%" border="0" cellspacing="0">

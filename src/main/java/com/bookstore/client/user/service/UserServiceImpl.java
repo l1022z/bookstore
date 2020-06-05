@@ -1,30 +1,28 @@
 package com.bookstore.client.user.service;
 
 import com.bookstore.client.user.dao.IUserDao;
+import com.bookstore.commons.beans.Order;
+import com.bookstore.commons.beans.OrderItem;
 import com.bookstore.commons.beans.User;
-import com.bookstore.utils.MailUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.bookstore.utils.MailUtil;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-/**
- * company: www.abc.com
- * Author: Administrator
- * Create Data: 2020/4/15
- */
 @Service
-public class UserServiceImpl implements IUserService{
+public class UserServiceImpl implements IUserService {
 
-    @Autowired
+    @Resource
     IUserDao userDao;
     @Override
     public int addUser(User user, HttpServletRequest request) {
         String emailMsg = "感谢您注册网上书城，请点击" +
-                "<a href='http://localhost:8080/"+request.getContextPath()+"/client/user/activeUser?activeCode=" + user.getActiveCode()+"'>激活</a>后使用！";
+                "<a href='http://localhost:8080/"+request.getContextPath()+"/client/user/activeUser?activeCode="+user.getActiveCode()+"'>激活</a>后使用！";
         try {
-            MailUtils.sendMail(user.getEmail(),emailMsg);
+            MailUtil.sendMail(user.getEmail(),emailMsg);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
@@ -49,5 +47,37 @@ public class UserServiceImpl implements IUserService{
     @Override
     public User findUserByLogin(User user) {
         return userDao.selectUserByLogin(user);
+    }
+
+    @Override
+    public int modifyUser(User user) {
+        return userDao.updateUser(user);
+    }
+
+    @Override
+    public List<Order> findOrderByUser(Integer id) {
+        return userDao.selectOrderByUser(id);
+    }
+
+    @Override
+    public List<OrderItem> findOrderItemById(String id) {
+        return userDao.selectOrderItemById(id);
+    }
+
+    @Override
+    public void removeOrderById(String id, String flag) {
+        if (flag == null) {
+            List<OrderItem> items = userDao.selectOrderItemById(id);
+            //加回库存
+            for (OrderItem item:items) {
+                userDao.updateProductnum(item);
+            }
+        }
+        /*if (1 == 1) {
+            int a=1/0;
+        }*/
+        //删除订单和订单项
+        userDao.deleteOrderById(id);
+        userDao.deleteOrderItemById(id);
     }
 }

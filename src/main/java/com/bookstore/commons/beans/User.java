@@ -1,13 +1,7 @@
 package com.bookstore.commons.beans;
 
-
 import java.util.Date;
 
-/**
- * company: www.abc.com
- * Author: Administrator
- * Create Data: 2020/4/14
- */
 public class User {
     private Integer id;
     private String username;

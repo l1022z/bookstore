@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--注册生成SqlSessionFactory-->
+    <!--注册SQLSessionFactory-->
     <bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
         <property name="configLocation" value="classpath:mybatis.xml"/>
@@ -15,5 +15,6 @@
         <property name="basePackage" value="com.bookstore.**.dao"/>
         <property name="sqlSessionFactoryBeanName" value="mySqlSessionFactory"/>
     </bean>
+
 
 </beans>

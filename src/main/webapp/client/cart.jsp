@@ -8,7 +8,9 @@
 
 <script>
 	function changeProductNum(count, totalCount, id) {
+		//商品数量强制转换为整型
 		count = parseInt(count);
+		//商品库存强制转换为整型
 		totalCount = parseInt(totalCount);
 		//如果数量为0，判断是否要删除商品
 		if (count == 0) {
@@ -24,7 +26,7 @@
 			count = totalCount;
 		}
 
-		location.href = "${pageContext.request.contextPath}/changeCart?id="
+		location.href = "${pageContext.request.contextPath}/client/cart/changeCart?id="
 				+ id + "&count=" + count;
 	}
 </script>
@@ -76,7 +78,7 @@
 															<input type="button" value='-' style="width:20px"
 															onclick="changeProductNum('${entry.value-1}','${entry.key.pnum}','${entry.key.id}')">
 
-															<input name="text" type="text" value="${entry.value}" style="width:40px;text-align:center" />
+															<input name="text" type="text" value="${entry.value}" readonly style="width:40px;text-align:center" />
 															<input type="button" value='+' style="width:20px"
 															onclick="changeProductNum('${entry.value+1}','${entry.key.pnum}','${entry.key.id}')">
 
@@ -84,7 +86,7 @@
 														<td width="10%">${entry.key.pnum}</td>
 														<td width="10%">${entry.key.price*entry.value}</td>
 														<td width="10%">
-															<a href="${pageContext.request.contextPath}/changeCart?id=${entry.key.id}&count=0"
+															<a href="${pageContext.request.contextPath}/client/cart/changeCart?id=${entry.key.id}&count=0"
 															style="color:#FF0000; font-weight:bold">X</a>
 														</td>
 													</tr>
@@ -100,7 +102,7 @@
 												</tr>
 											</table>
 											<div style="text-align:right; margin-top:10px">
-												<a href="${pageContext.request.contextPath}/showProductByPage">
+												<a href="${pageContext.request.contextPath}/client/index.jsp">
 													<img src="images/gwc_jx.gif" border="0" />
 												</a>
 												&nbsp;&nbsp;&nbsp;&nbsp;

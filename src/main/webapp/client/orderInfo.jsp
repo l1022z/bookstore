@@ -21,7 +21,7 @@
 					<div style="text-align:right; margin:5px 10px 5px 0px">
 						<a href="${pageContext.request.contextPath }/index.jsp">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;
 						<a href="${pageContext.request.contextPath }/client/myAccount.jsp">我的账户</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;
-						<a href="${pageContext.request.contextPath }/findOrderByUser">订单查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;订单详细信息
+						<a href="${pageContext.request.contextPath }/client/user/findOrderByUser">订单查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;订单详细信息
 					</div>
 					<table cellspacing="0" class="infocontent">
 						<tr>
@@ -29,7 +29,7 @@
 								<table width="100%" border="0" cellspacing="0">
 									<tr>
 										<td>
-											<p>订单编号:${order.id}</p>
+											<p>订单编号:${items[0].order.id}</p>
 										</td>
 									</tr>
 									<tr>
@@ -43,33 +43,33 @@
 													<td width="10%">小计</td>
 												</tr>
 											</table> 
-											<c:forEach items="${order.orderItems}" var="item" varStatus="vs">
+											<c:forEach items="${items}" var="item" varStatus="vs">
 												<table width="100%" border="0" cellspacing="0">
 													<tr>
 														<td width="10%">${vs.count }</td>
-														<td width="40%">${item.p.name}</td>
-														<td width="10%">${item.p.price }</td>
+														<td width="40%">${item.product.name}</td>
+														<td width="10%">${item.product.price }</td>
 														<td width="10%">${item.buynum }</td>
-														<td width="10%">${item.buynum*item.p.price }</td>
+														<td width="10%">${item.buynum*item.product.price }</td>
 													</tr>
 												</table>
 											</c:forEach>
 											<table cellspacing="1" class="carttable">
 												<tr>
 													<td style="text-align:right; padding-right:40px;"><font
-														style="color:#FF0000">合计：&nbsp;&nbsp;${order.money}</font>
+														style="color:#FF0000">合计：&nbsp;&nbsp;${items[0].order.money}</font>
 													</td>
 												</tr>
 											</table>
 											<p>
-												收货地址：${order.receiverAddress }&nbsp;&nbsp;&nbsp;&nbsp;<br />
-												收货人：&nbsp;&nbsp;&nbsp;&nbsp;${order.receiverName }&nbsp;&nbsp;&nbsp;&nbsp;<br />
-												联系方式：${order.receiverPhone }&nbsp;&nbsp;&nbsp;&nbsp;
+												收货地址：${items[0].order.receiverAddress }&nbsp;&nbsp;&nbsp;&nbsp;<br />
+												收货人：&nbsp;&nbsp;&nbsp;&nbsp;${items[0].order.receiverName }&nbsp;&nbsp;&nbsp;&nbsp;<br />
+												联系方式：${items[0].order.receiverPhone }&nbsp;&nbsp;&nbsp;&nbsp;
 											</p>
 											<hr>
-											<c:if test="${order.paystate != 1 }">
+											<c:if test="${items[0].order.paystate != 1 }">
 											<p style="text-align:right">
-												<a href="${pageContext.request.contextPath}/client/pay.jsp?id=${order.id}&money=${order.money}">
+												<a href="${pageContext.request.contextPath}/client/order/pay?id=${items[0].order.id}&money=${items[0].order.money}">
 													<img src="${pageContext.request.contextPath }/client/images/gif53_030.gif" width="204" height="51" border="0" /> 
 												</a>
 											</p>

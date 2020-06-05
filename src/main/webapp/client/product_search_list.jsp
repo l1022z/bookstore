@@ -1,12 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="yyf" uri="http://yyf.pager-tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 	<title>bookStore列表</title>
 	<%--导入css --%>
-	<link rel="stylesheet" href="client/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/client/css/main.css" type="text/css" />
 </head>
 
 <body class="main">
@@ -23,25 +24,25 @@
 							<td>
 								<h1>商品目录</h1>
 								<hr />
-								<h1>全部商品</h1>&nbsp;&nbsp;&nbsp;&nbsp;共${bean.totalCount}种商品
+								<h1>全部商品</h1>&nbsp;&nbsp;&nbsp;&nbsp;共${pageModel.rocordCount}种商品
 								<hr />
 								<div style="margin-top:20px; margin-bottom:5px">
-									<img src="client/images/productlist.gif" width="100%" height="38" />
+									<img src="${pageContext.request.contextPath}/client/images/productlist.gif" width="100%" height="38" />
 								</div>
 
 								<table cellspacing="0" class="booklist">
 									<tr>
-										<c:forEach items="${bean.ps}" var="p" varStatus="vs">
+										<c:forEach items="${products}" var="p" varStatus="vs">
 											<td>
 												<div class="divbookpic">
 													<p>
-														<a href="${pageContext.request.contextPath}/findProductById?id=${p.id}"><img
+														<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}"><img
 															src="${pageContext.request.contextPath}${p.imgurl}"
 															width="115" height="129" border="0" /> </a>
 													</p>
 												</div>
 												<div class="divlisttitle">
-													<a href="${pageContext.request.contextPath}/findProductById?id=${p.id}">书名： ${p.name}<br />售价：￥${p.price} </a>
+													<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}">书名： ${p.name}<br />售价：￥${p.price} </a>
 												</div>
 											</td>
 											<%-- <c:if test="${vs.count%4==0}">
@@ -55,7 +56,11 @@
 								</table> -->
 
 								<div class="pagination">
-									<ul>
+									<yyf:pager pageIndex="${pageModel.pageIndex}"
+											   pageSize="${pageModel.pageSize}"
+											   recordCount="${pageModel.rocordCount}"
+											   submitUrl="${pageContext.request.contextPath}/client/product/findProductByName?pageIndex={0}&name=${name}"/>
+									<%--<ul>
 										<c:if test="${bean.currentPage!=1}">
 											<li class="nextPage">
 												<a href="${pageContext.request.contextPath}/MenuSearchSerlvet?currentPage=${bean.currentPage-1}&textfield=${bean.searchfield}">&lt;&lt;上一页</a>
@@ -85,7 +90,7 @@
 												<a href="${pageContext.request.contextPath}/MenuSearchSerlvet?currentPage=${bean.currentPage+1}&textfield=${bean.searchfield}">下一页&gt;&gt;</a>
 											</li>
 										</c:if>
-									</ul>
+									</ul>--%>
 								</div></td>
 						</tr>
 					</table>

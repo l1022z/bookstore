@@ -54,13 +54,13 @@
 					</table>
 					<table width="100%" border="0" cellspacing="0">
 						<tr>
-						<c:forEach items="${pList }" var="pArray">
+						<c:forEach items="${products }" var="p">
 							<td style="width:80; text-align:center">
-								<a href="${pageContext.request.contextPath}/findProductById?id=${pArray[0]}">
-									<img src="${pageContext.request.contextPath }${pArray[2]}" width="102" height="130" border="0" /> 
+								<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}">
+									<img src="${pageContext.request.contextPath }${p.imgurl}" width="102" height="130" border="0" />
 								</a>
 								<br /> 
-								<a href="${pageContext.request.contextPath}/findProductById?id=${pArray[0]}">${pArray[1]}</a>
+								<a href="${pageContext.request.contextPath}/client/product/findProductById?id=${p.id}">${p.name}<br/> 价格：${p.price}</a>
 								<%-- <br />作者:${pArray[2] } --%>
 							</td>
 						</c:forEach>

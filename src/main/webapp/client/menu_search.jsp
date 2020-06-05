@@ -30,30 +30,30 @@ function search(){
 </script>
 
 <div id="divmenu">
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">文学</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">生活</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">计算机</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">外语</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">经管</a>
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">励志</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">社科</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">学术</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">少儿</a>
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">艺术</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">原版</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">科技</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">考试</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp">生活百科</a> 
-		<a href="${pageContext.request.contextPath}/client/product_list.jsp" style="color:#FFFF00">全部商品目录</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=文学">文学</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=生活">生活</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=计算机">计算机</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=外语">外语</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=经管">经管</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=励志">励志</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=社科">社科</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=学术">学术</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=少儿">少儿</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=艺术">艺术</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=原版">原版</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=科技">科技</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=考试">考试</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByCategory?category=生活百科">生活百科</a>
+		<a href="${pageContext.request.contextPath}/client/product/findProductByName" style="color:#FFFF00">全部商品目录</a>
 		
 </div>
 <div id="divsearch">
-<form action="${pageContext.request.contextPath }/client/product_search_list.jsp" id="searchform">
+<form action="${pageContext.request.contextPath }/client/product/findProductByName" id="searchform">
 	<table width="100%" border="0" cellspacing="0">
 		<tr>
 			<td style="text-align:right; padding-right:220px">
 				Search 
-				<input type="text" name="textfield" class="inputtable" id="textfield" value="请输入书名"
+				<input type="text" name="name" class="inputtable" id="textfield" value="${name==null?'请输入书名':name}"
 				onmouseover="this.focus();"
 				onclick="my_click(this, 'textfield');"
 				onBlur="my_blur(this, 'textfield');"/> 

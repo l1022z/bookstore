@@ -31,7 +31,7 @@ TH {
 	function exitSys() {
 		var flag = window.confirm("确认退出系统吗?");
 		if (flag) {
-			window.top.open('', '_parent', '');
+			window.top.open('${pageContext.request.contextPath}/admin/login/logout', '_parent', '');
 			window.top.close();
 		}
 		//如果你使用的是firefox浏览器必须要做以下设置 

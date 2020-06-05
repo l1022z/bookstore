@@ -26,13 +26,13 @@
 						<tr>
 							<td class="listtd">
 								<img src="${pageContext.request.contextPath }/client/images/miniicon.gif" width="9" height="6" />&nbsp;&nbsp;&nbsp;&nbsp; 
-								<a href="${pageContext.request.contextPath}/findOrderByUser">订单查询</a>
+								<a href="${pageContext.request.contextPath}/client/user/findOrderByUser">订单查询</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="listtd">
 								<img src="${pageContext.request.contextPath }/client/images/miniicon.gif" width="9" height="6" />&nbsp;&nbsp;&nbsp;&nbsp; 
-								<a href="${pageContext.request.contextPath}/client/user/logout">用戶退出</a>
+								<a href="${pageContext.request.contextPath}/client/user/logout">用户退出</a>
 							</td>
 						</tr>
 					</table>

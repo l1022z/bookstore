@@ -1,14 +1,12 @@
 package com.bookstore.client.user.service;
 
+import com.bookstore.commons.beans.Order;
+import com.bookstore.commons.beans.OrderItem;
 import com.bookstore.commons.beans.User;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-/**
- * company: www.abc.com
- * Author: Administrator
- * Create Data: 2020/4/15
- */
 public interface IUserService {
     int addUser(User user, HttpServletRequest request);
 
@@ -19,4 +17,12 @@ public interface IUserService {
     User findUsername(String username);
 
     User findUserByLogin(User user);
+
+    int modifyUser(User user);
+
+    List<Order> findOrderByUser(Integer id);
+
+    List<OrderItem> findOrderItemById(String id);
+
+    void removeOrderById(String id, String flag);
 }

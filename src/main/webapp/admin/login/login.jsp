@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <script type="text/javascript">
 function ini(){
@@ -28,11 +29,16 @@ function ini(){
 									</tr>
 									<tr>
 										<td align="center" valign="bottom" background="${pageContext.request.contextPath}/admin/images/loginbg.gif">
-											<form id="loginAction_home" name="form1" action="${pageContext.request.contextPath}/admin/login/home.jsp" target="_parent" method="post">
+											<form id="loginAction_home" name="form1" action="${pageContext.request.contextPath}/admin/login/login" target="_parent" method="post">
 												<table border="0" align="center" cellpadding="2" cellspacing="0">
 													<tr align="center">
 														<td height="30" colspan="2" style="border-bottom: 1px dotted #cccccc">
-															<strong style="font-size: 14px;">请登录</strong>
+                                                            <c:if test="${fail == null}">
+                                                                <strong style="font-size: 14px;">请登录</strong>
+                                                            </c:if>
+                                                            <c:if test="${fail != null}">
+                                                                <strong style="font-size: 14px;">${fail}</strong>
+                                                            </c:if>
 														</td>
 													</tr>
 													<tr>
@@ -40,7 +46,7 @@ function ini(){
 															<font color="000F60"><strong>用户名：</strong> </font>
 														</td>
 														<td>
-															<input type="text" name="logonName" value="" id="logonName" class="text" style="width: 160px;"/>
+															<input type="text" name="username" value="" id="logonName" class="text" style="width: 160px;"/>
 														</td>
 													</tr>
 													<tr>
@@ -48,7 +54,7 @@ function ini(){
 															<strong><font color="000F60">密码： </font> </strong>
 														</td>
 														<td>
-															<input type="password" name="logonPwd" id="logonPwd" class="text" style="width: 160px;"/>
+															<input type="password" name="password" id="logonPwd" class="text" style="width: 160px;"/>
 														</td>
 													</tr>
 													<tr>
