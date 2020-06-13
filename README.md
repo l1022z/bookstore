@@ -1,0 +1,5 @@
+# bookstore
+网上书城
+能力有限，会有多余bug
+请注意在AlipayConfig类中添加支付宝沙箱账号以及密钥
+请注意在MailUtil类中配置邮箱
