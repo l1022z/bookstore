@@ -13,7 +13,7 @@
 <body>
 	<br>
 	<form id="Form1" name="Form1"
-		action="${pageContext.request.contextPath}/findOrderByManyCondition"
+		action="${pageContext.request.contextPath}/admin/orders/findOrderByManyCondition"
 		method="post">
 		<table cellSpacing="1" cellPadding="0" width="100%" align="center"
 			bgColor="#f5fafe" border="0">
@@ -30,12 +30,12 @@
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									订单编号</td>
 								<td class="ta_01" bgColor="#ffffff"><input type="text"
-									name="id" size="15" value="" id="Form1_userName" class="bg" />
+									name="id" size="15" value="${order.id}" id="Form1_userName" class="bg" />
 								</td>
 								<td height="22" align="center" bgColor="#f5fafe" class="ta_01">
 									收件人：</td>
 								<td class="ta_01" bgColor="#ffffff"><input type="text"
-									name="receiverName" size="15" value="" id="Form1_userName"
+									name="receiverName" size="15" value="${order.receiverName}" id="Form1_userName"
 									class="bg" />
 								</td>
 							</tr>
@@ -100,7 +100,7 @@
 									<td width="10%" align="center">${order.paystate==0?"未支付":"已支付"}</td>
 
 									<td align="center" style="HEIGHT: 22px"><a
-										href="${pageContext.request.contextPath}/findOrderById?id=${order.id}&type=admin">
+										href="${pageContext.request.contextPath}/admin/orders/findOrderById?id=${order.id}&type=admin">
 											<img
 											src="${pageContext.request.contextPath}/admin/images/button_view.gif"
 											border="0" style="CURSOR: hand"> </a>
@@ -108,7 +108,7 @@
 									<td align="center" style="HEIGHT: 22px"><c:if
 											test="${order.paystate!=0 }">
 											<a
-												href="${pageContext.request.contextPath}/delOrderById?id=${order.id}&type=admin">
+												href="${pageContext.request.contextPath}/admin/orders/removeOrder?id=${order.id}&type=admin">
 												<img
 												src="${pageContext.request.contextPath}/admin/images/i_del.gif"
 												width="16" height="16" border="0" style="CURSOR: hand">

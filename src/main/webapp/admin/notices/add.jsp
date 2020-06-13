@@ -10,7 +10,7 @@
 </HEAD>
 
 <body>
-	<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/manager/AddNoticeServlet" 
+	<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/admin/notices/AddNotice"
 		method="post">
 		&nbsp;
 		<table cellSpacing="1" cellPadding="5" width="100%" align="center"

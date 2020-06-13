@@ -20,26 +20,26 @@
 		<tr>
 			<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 				订单编号：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.id}</td>
+			<td class="ta_01" bgColor="#ffffff">${items[0].order.id}</td>
 			<td align="center" bgColor="#f5fafe" class="ta_01">所属用户：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.user.username }</td>
+			<td class="ta_01" bgColor="#ffffff">${orders[0].user.username}</td>
 		</tr>
 
 		<tr>
 			<td align="center" bgColor="#f5fafe" class="ta_01">收件人：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.receiverName }</td>
+			<td class="ta_01" bgColor="#ffffff">${items[0].order.receiverName }</td>
 			<td align="center" bgColor="#f5fafe" class="ta_01">联系电话：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.receiverPhone }</td>
+			<td class="ta_01" bgColor="#ffffff">${items[0].order.receiverPhone }</td>
 		</tr>
 		<tr>
 			<td align="center" bgColor="#f5fafe" class="ta_01">送货地址：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.receiverAddress}</td>
+			<td class="ta_01" bgColor="#ffffff">${items[0].order.receiverAddress }</td>
 			<td align="center" bgColor="#f5fafe" class="ta_01">总价：</td>
-			<td class="ta_01" bgColor="#ffffff">${order.money }</td>
+			<td class="ta_01" bgColor="#ffffff">${items[0].order.money }</td>
 		</tr>
 		<tr>
 			<td align="center" bgColor="#f5fafe" class="ta_01">下单时间：</td>
-			<td class="ta_01" bgColor="#ffffff" colSpan="3">${order.ordertime}</td>
+			<td class="ta_01" bgColor="#ffffff" colSpan="3">${items[0].order.ordertime}</td>
 		</tr>
 
 		<TR>
@@ -60,20 +60,20 @@
 						<td width="31%" align="center">商品描述</td>
 					</tr>
 
-					<c:forEach items="${order.orderItems}" var="item" varStatus="vs">
+					<c:forEach items="${items}" var="item" varStatus="vs">
 						<tr
 							style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #eeeeee">
 							<td align="center" width="7%">${vs.count }</td>
 							<td width="8%" align="center"><img
-								src="${pageContext.request.contextPath}${item.p.imgurl}"
+								src="${pageContext.request.contextPath}${item.product.imgurl}"
 								width="50" height="50"></td>
 
-							<td align="center" width="18%">${item.p.id }</td>
-							<td align="center" width="10%">${item.p.name }</td>
-							<td align="center" width="10%">${item.p.price }</td>
+							<td align="center" width="18%">${item.product.id }</td>
+							<td align="center" width="10%">${item.product.name }</td>
+							<td align="center" width="10%">${item.product.price }</td>
 							<td width="7%" align="center">${item.buynum }</td>
-							<td width="7%" align="center">${item.p.category }</td>
-							<td width="31%" align="center">${item.p.description}</td>
+							<td width="7%" align="center">${item.product.category }</td>
+							<td width="31%" align="center">${item.product.description}</td>
 						</tr>
 					</c:forEach>
 

@@ -7,8 +7,8 @@
 <title>bookStore注册页面</title>
 <%--导入css和js --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/client/css/main.css" type="text/css"/>
-<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/form.js" charset=”utf-8″></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/client/js/jquery-3.3.1.min.js" charset=”utf-8″></script>
 
 <script type="text/javascript">
 	function findUsername() {

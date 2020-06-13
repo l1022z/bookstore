@@ -55,7 +55,6 @@ public class UserHandler {
             return "redirect:/client/activeFail.jsp";
         }
     }
-
     //检测注册邮箱是否被占用
     @RequestMapping("/findEmail")
     @ResponseBody
@@ -68,7 +67,6 @@ public class UserHandler {
             return "OK";
         }
     }
-
     //检测会员名是否已被占用
     @RequestMapping("/findUsername")
     @ResponseBody

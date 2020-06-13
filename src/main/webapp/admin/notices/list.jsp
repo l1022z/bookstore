@@ -56,12 +56,12 @@
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 										width="8%">${n.n_time }</td>
 									<td align="center" style="HEIGHT: 22px" width="7%">
-										<a href="${pageContext.request.contextPath}/manager/FindByIdNoticeServlet?id=${n.n_id}">
+										<a href="${pageContext.request.contextPath}/admin/notices/FindNoticeById?id=${n.n_id}">
 											<img src="${pageContext.request.contextPath}/admin/images/i_edit.gif" border="0" style="CURSOR: hand"> 
 										</a>
 									</td>
 									<td align="center" style="HEIGHT: 22px" width="7%"><a
-										href="${pageContext.request.contextPath}/manager/DeleteNoticeServlet?id=${n.n_id}">
+										href="${pageContext.request.contextPath}/admin/notices/DeleteNoticeServlet?id=${n.n_id}">
 											<img
 											src="${pageContext.request.contextPath}/admin/images/i_del.gif"
 											width="16" height="16" border="0" style="CURSOR: hand">

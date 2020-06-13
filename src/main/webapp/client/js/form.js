@@ -1,4 +1,4 @@
-var emailObj;
+﻿var emailObj;
 var usernameObj;
 var passwordObj;
 var confirmObj;

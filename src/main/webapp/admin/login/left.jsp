@@ -48,10 +48,10 @@
   	<td><a href="${pageContext.request.contextPath}/admin/products/download.jsp" target="mainFrame" class="left_list">销售榜单</a></td>
   </tr>
   <tr>
-  	<td><a href="${pageContext.request.contextPath}/findOrders" target="mainFrame" class="left_list">订单管理</a></td>
+  	<td><a href="${pageContext.request.contextPath}/admin/orders/findOrder" target="mainFrame" class="left_list">订单管理</a></td>
   </tr>
   <tr>
-  	<td><a href="${pageContext.request.contextPath}/manager/ListNoticeServlet" target="mainFrame" class="left_list">公告管理</a></td>
+  	<td><a href="${pageContext.request.contextPath}/admin/notices/ListNotice" target="mainFrame" class="left_list">公告管理</a></td>
   </tr>
 </table>
 </body>
